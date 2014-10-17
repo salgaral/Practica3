@@ -3,14 +3,15 @@ package models.DAO.mem;
 import java.util.List;
 
 import models.DAO.RoundDAO;
+import models.entities.Round;
 
-public class MemRoundDAO<Round, ID> implements RoundDAO<Round, ID>{
+public class MemRoundDAO extends MemGenericDAO<Round, Integer> implements RoundDAO{
 
 	public void create(Round entity) {
 		
 	}
 
-	public Round read(ID id) {
+	public Round read(Integer id) {
 
 		return null;
 	}
@@ -23,7 +24,7 @@ public class MemRoundDAO<Round, ID> implements RoundDAO<Round, ID>{
 		
 	}
 
-	public void deleteById(ID id) {
+	public void deleteById(Integer id) {
 		
 	}
 
@@ -36,5 +37,9 @@ public class MemRoundDAO<Round, ID> implements RoundDAO<Round, ID>{
 
 		return null;
 	}
+	
+	protected Integer getId(Round entity){
+		return entity.getId();
+	};
 
 }

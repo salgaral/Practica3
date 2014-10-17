@@ -3,14 +3,15 @@ package models.DAO.mem;
 import java.util.List;
 
 import models.DAO.UserDAO;
+import models.entities.User;
 
-public class MemUserDAO<User, ID> implements UserDAO<User, ID>{
+public class MemUserDAO extends MemGenericDAO<User, Integer> implements UserDAO{
 
 	public void create(User entity) {
 		
 	}
 
-	public User read(ID id) {
+	public User read(Integer id) {
 
 		return null;
 	}
@@ -23,7 +24,7 @@ public class MemUserDAO<User, ID> implements UserDAO<User, ID>{
 		
 	}
 
-	public void deleteById(ID id) {
+	public void deleteById(Integer id) {
 		
 	}
 
@@ -36,5 +37,9 @@ public class MemUserDAO<User, ID> implements UserDAO<User, ID>{
 
 		return null;
 	}
+	
+	protected Integer getId(User entity){
+		return entity.getId();
+	};
 
 }
